@@ -1,5 +1,5 @@
-#ifndef SMTP-ATTACH_H
-#define SMTP-ATTACH_H
+#ifndef SMTPATTACH_H
+#define SMTPATTACH_H
 
 #include <stdio.h>
 #include <string.h>
