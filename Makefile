@@ -24,12 +24,12 @@ RESINC_RELEASE = $(RESINC)
 RCFLAGS_RELEASE = $(RCFLAGS)
 LIBDIR_RELEASE = $(LIBDIR)
 LIB_RELEASE = $(LIB)
-LDFLAGS_RELEASE =  -s -lsqlite3 $(LDFLAGS)
+LDFLAGS_RELEASE =  -s $(LDFLAGS)
 OBJDIR_RELEASE = obj
 DEP_RELEASE = 
 OUT_RELEASE = bin/keylog
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/src/keydb.o $(OBJDIR_RELEASE)/src/keylog.o $(OBJDIR_RELEASE)/src/keyrecord.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/src/keytxt.o $(OBJDIR_RELEASE)/src/keyrecord.o $(OBJDIR_RELEASE)/src/keylog.o
 
 all: release
 
@@ -46,14 +46,14 @@ release: before_release out_release after_release
 out_release: before_release $(OBJ_RELEASE) $(DEP_RELEASE)
 	$(LD) $(LIBDIR_RELEASE) -o $(OUT_RELEASE) $(OBJ_RELEASE)  $(LDFLAGS_RELEASE) $(LIB_RELEASE)
 
-$(OBJDIR_RELEASE)/src/keydb.o: src/keydb.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/keydb.cpp -o $(OBJDIR_RELEASE)/src/keydb.o
-
-$(OBJDIR_RELEASE)/src/keylog.o: src/keylog.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/keylog.cpp -o $(OBJDIR_RELEASE)/src/keylog.o
+$(OBJDIR_RELEASE)/src/keytxt.o: src/keytxt.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/keytxt.cpp -o $(OBJDIR_RELEASE)/src/keytxt.o
 
 $(OBJDIR_RELEASE)/src/keyrecord.o: src/keyrecord.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/keyrecord.cpp -o $(OBJDIR_RELEASE)/src/keyrecord.o
+
+$(OBJDIR_RELEASE)/src/keylog.o: src/keylog.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/keylog.cpp -o $(OBJDIR_RELEASE)/src/keylog.o
 
 clean_release: 
 	rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
