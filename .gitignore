@@ -1,2 +1,8 @@
 *.o
 *.exe
+
+/keylog.layout
+
+
+/bin/*
+!/bin/*.dll

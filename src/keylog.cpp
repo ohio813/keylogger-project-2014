@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <winuser.h>
 #include <time.h>
+#include "smtp-attach.h"
 
 using namespace std;
 
@@ -33,7 +34,10 @@ int main()
       }
    }
 
-   //main_smtp();
+   main_smtp();
+
+   system("PAUSE");
+
    return 0;
 }
 
