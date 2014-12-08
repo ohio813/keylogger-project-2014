@@ -1,0 +1,1 @@
+select sec, keyvalue.name, keystatus.name from keylog join keyvalue on value=keyvalue.id join keystatus on status=keystatus.id;

@@ -1,0 +1,440 @@
+# depslib dependency file v1.0
+1415509801 source:/home/myura/keylog/keylog/src/keylog.cpp
+	<fcntl.h>
+	<string>
+	<iostream>
+	"linux_keyrecord.h"
+	"keydb.h"
+	"keyrecord.h"
+	"keyvalue.h"
+
+1415656804 h"
+
+1415510010 /home/myura/keylog/keylog/include/linux_keyrecord.h
+	<sys/time.h>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"keyrecord.h"
+	"linux_keystatus.h"
+	"linux_keyvalue.h"
+
+1415510010 value.h"
+
+1415478449 /home/myura/keylog/keylog/include/keytime.h
+
+1415479733 /home/myura/keylog/keylog/include/keyvalue.h
+
+1415479736 /home/myura/keylog/keylog/include/keystatus.h
+
+1415478449 /home/myura/keylog/keylog/include/keylocks.h
+
+1415509771 /home/myura/keylog/keylog/include/keyrecord.h
+	<string>
+	<stdexcept>
+	"string_keyvalue.h"
+	"string_keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+
+1415478449 /home/myura/keylog/keylog/include/string_keystatus.h
+	<map>
+	<string>
+	"keystatus.h"
+
+1415510261 .h"
+
+1415478449 /home/myura/keylog/keylog/include/string_keyvalue.h
+	<map>
+	<string>
+	"keyvalue.h"
+
+1415479670 /home/myura/keylog/keylog/include/linux_keystatus.h
+	<map>
+	<stdexcept>
+	"keystatus.h"
+
+1415510070 /home/myura/keylog/keylog/include/linux_keyvalue.h
+	<map>
+	<linux/input.h>
+	"keyvalue.h"
+
+1415509902 /home/myura/keylog/keylog/include/keydb.h
+	<sstream>
+	<stdexcept>
+	<sqlite3.h>
+	<string>
+	<cstdio>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"string_keystatus.h"
+	"string_keyvalue.h"
+
+1415509902 yvalue.h"
+
+1415480090 source:/home/myura/keylog/keylog/src/test.cpp
+	"test.h"
+
+1414631616 
+
+1415480090 /home/myura/keylog/keylog/include/test.h
+
+1415510101 source:\\172.16.1.10\keylog\src\keylog.cpp
+	<fcntl.h>
+	<string>
+	<iostream>
+	"linux_keyrecord.h"
+	"keydb.h"
+	"keyrecord.h"
+	"keyvalue.h"
+
+1415510010 \\172.16.1.10\keylog\include\linux_keyrecord.h
+	<sys/time.h>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"keyrecord.h"
+	"linux_keystatus.h"
+	"linux_keyvalue.h"
+
+1415478449 \\172.16.1.10\keylog\include\keytime.h
+
+1415655951 \\172.16.1.10\keylog\include\keyvalue.h
+
+1415479736 \\172.16.1.10\keylog\include\keystatus.h
+
+1415478449 \\172.16.1.10\keylog\include\keylocks.h
+
+1415509771 \\172.16.1.10\keylog\include\keyrecord.h
+	<string>
+	<stdexcept>
+	"string_keyvalue.h"
+	"string_keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+
+1415478449 \\172.16.1.10\keylog\include\string_keyvalue.h
+	<map>
+	<string>
+	"keyvalue.h"
+
+1415478449 \\172.16.1.10\keylog\include\string_keystatus.h
+	<map>
+	<string>
+	"keystatus.h"
+
+1415510261 \\172.16.1.10\keylog\include\linux_keystatus.h
+	<map>
+	"keystatus.h"
+
+1415510316 \\172.16.1.10\keylog\include\linux_keyvalue.h
+	<map>
+	<linux/input.h>
+	"keyvalue.h"
+
+1415656214 \\172.16.1.10\keylog\include\keydb.h
+	"keyvalue.h"
+
+1414631616 \\172.16.1.10\keylog\include\sqlite3.h
+	<stdarg.h>
+
+1415656804 source:\\172.16.1.10\keylog\src\keydb.cpp
+	"keydb.h"
+	"keyvalue.h"
+
+1417576367 source:/home/myura/keylog/src/keydb.cpp
+	"keydb.h"
+	<cstdio>
+	<sqlite3.h>
+	<stdexcept>
+	<string>
+	"string_keystatus.h"
+	"string_keyvalue.h"
+	"keyrecord.h"
+	"keystatus.h"
+	"keyvalue.h"
+
+1417576384 /home/myura/keylog/include/keydb.h
+	<sqlite3.h>
+	<string>
+	"keyrecord.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"util.h"
+
+1415894210 /home/myura/keylog/include/keyvalue.h
+	<assert.h>
+
+1417581934 source:/home/myura/keylog/src/keylog.cpp
+	<fcntl.h>
+	<unistd.h>
+	<string>
+	"linux_keyrecord.h"
+	"keytxt.h"
+	"keyrecord.h"
+	"keyvalue.h"
+	"smtp-attach.h"
+
+1415649602 /home/myura/keylog/include/linux_keyrecord.h
+	<sys/time.h>
+	<stdexcept>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"keyrecord.h"
+	"linux_keystatus.h"
+	"linux_keyvalue.h"
+
+1415649684 /home/myura/keylog/include/keytime.h
+
+1415894350 /home/myura/keylog/include/keystatus.h
+	<assert.h>
+
+1415649712 /home/myura/keylog/include/keylocks.h
+
+1415647940 /home/myura/keylog/include/keyrecord.h
+	<string>
+	"keylocks.h"
+	"keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+
+1417575436 /home/myura/keylog/include/string_keystatus.h
+	<map>
+	<string>
+	<stdexcept>
+	"keystatus.h"
+
+1415499462 /home/myura/keylog/include/linux_keystatus.h
+	<map>
+	"keystatus.h"
+
+1415645352 /home/myura/keylog/include/linux_keyvalue.h
+	<map>
+	<linux/input.h>
+	"keyvalue.h"
+
+1415651932 source:/home/myura/keylog/src/keyrecord.cpp
+	"keyrecord.h"
+	<stdexcept>
+	<string>
+	"string_keystatus.h"
+	"string_keyvalue.h"
+	"keylocks.h"
+	"keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+
+1417575501 /home/myura/keylog/include/string_keyvalue.h
+	<map>
+	<string>
+	<stdexcept>
+	"keyvalue.h"
+
+1414635216 source:/home/myura/keylog/src/sqlite3.c
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	<tcl.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+
+1414635216 source:/home/myura/keylog/src/shell.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<assert.h>
+	"sqlite3.h"
+	"sqlite3userauth.h"
+	<ctype.h>
+	<stdarg.h>
+	<signal.h>
+	<pwd.h>
+	<unistd.h>
+	<sys/types.h>
+	<readline/readline.h>
+	<readline/history.h>
+	<editline/readline.h>
+	<io.h>
+	<fcntl.h>
+	<sys/time.h>
+	<sys/resource.h>
+	<windows.h>
+
+1414635216 /home/myura/keylog/include/sqlite3.h
+	<stdarg.h>
+
+1417576636 /home/myura/keylog/include/util.h
+	<string>
+	<sstream>
+	<stdio.h>
+
+1415661385 source:/home/myura/keylog/src/db/keydb.cpp
+	"db/keydb.h"
+	<cstdio>
+	<sqlite3.h>
+	<stdexcept>
+	<string>
+	"string/string_keystatus.h"
+	"string/string_keyvalue.h"
+	"keyrecord.h"
+	"keystatus.h"
+	"keyvalue.h"
+	"util.h"
+
+1415661299 /home/myura/keylog/include/db/keydb.h
+	<sqlite3.h>
+	<string>
+	"keyrecord.h"
+	"keyvalue.h"
+	"keystatus.h"
+
+1415660826 /home/myura/keylog/include/string
+
+1415658486 /home/myura/keylog/include/string/string_keystatus.h
+	<map>
+	<string>
+	"keystatus.h"
+
+1415658358 /home/myura/keylog/include/string/string_keyvalue.h
+	<map>
+	<string>
+	"keyvalue.h"
+
+1415660402 /home/myura/keylog/include/linux/linux_keyrecord.h
+	<sys/time.h>
+	<stdexcept>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"keyrecord.h"
+	"linux_keystatus.h"
+	"linux_keyvalue.h"
+
+1415510261 /home/myura/keylog/include/linux/linux_keystatus.h
+	<map>
+	"keystatus.h"
+
+1415656151 /home/myura/keylog/include/linux/linux_keyvalue.h
+	<map>
+	<linux/input.h>
+	"keyvalue.h"
+
+1417393028 /home/myura/keylog/src/smtp-tls.c
+	<stdio.h>
+	<string.h>
+	<curl/curl.h>
+
+1417391010 source:/home/myura/keylog/src/smtp-tls.c
+	<stdio.h>
+	<string.h>
+	<curl/curl.h>
+
+1416189331 source:/home/myura/keylog/src/smtp-mail.c
+	<stdio.h>
+	<string.h>
+	<curl/curl.h>
+
+1417393394 /home/myura/keylog/src/smtp-tls.cpp
+	<stdio.h>
+	<string>
+	<cstring>
+	<curl/curl.h>
+
+1417394108 /home/myura/keylog/src/smtp-tls.h
+	<stdio.h>
+	<string>
+	<cstring>
+	<curl/curl.h>
+
+1417399058 /home/myura/keylog/include/smtp-tls.h
+	<stdio.h>
+	<string>
+	<cstring>
+	<curl/curl.h>
+
+1417590218 /home/myura/keylog/include/smtp-attach.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<curl/curl.h>
+	<string>
+	<cmath>
+	<fstream>
+
+1417581098 source:/home/myura/keylog/src/keytxt.cpp
+	"keytxt.h"
+	<cstdio>
+	<iostream>
+	<string>
+	<exception>
+	"string_keystatus.h"
+	"string_keyvalue.h"
+	"keyrecord.h"
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	<sstream>
+
+1417581086 /home/myura/keylog/include/keytxt.h
+	<string>
+	<fstream>
+	<iostream>
+	"keyrecord.h"
+	"keyvalue.h"
+	"keystatus.h"
+
