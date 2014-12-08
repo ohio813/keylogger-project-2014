@@ -8,4 +8,5 @@
 
 /bin/*
 !/bin/*.dll
-!/bin/*.exe
+!/bin/*.linux.exe
+!/bin/*.windows.exe
