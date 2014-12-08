@@ -5,7 +5,7 @@
 		<Option title="keylog" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="include\;" />
+		<Option virtualFolders="include/;" />
 		<Build>
 			<Target title="release_windows">
 				<Option platforms="Windows;" />
@@ -21,7 +21,8 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="C:\MinGW\msys\1.0\local\lib\libcurl.dll.a" />
+					<Add option="-static" />
+					<Add library="C:/MinGW/msys/1.0/local/lib/libcurl.dll.a" />
 					<Add directory="C:/MinGW/msys/1.0/local/include" />
 				</Linker>
 			</Target>
@@ -46,9 +47,6 @@
 			<Add option="-Wall" />
 			<Add directory="include" />
 		</Compiler>
-		<Linker>
-			<Add option="-static" />
-		</Linker>
 		<Unit filename="include/keydb.h" />
 		<Unit filename="include/keylocks.h" />
 		<Unit filename="include/keyrecord.h" />
