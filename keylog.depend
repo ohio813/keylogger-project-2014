@@ -8,7 +8,7 @@
 	"keyrecord.h"
 	"keyvalue.h"
 
-1418259308 h"
+1417575501 h"
 
 1415510010 /home/myura/keylog/keylog/include/linux_keyrecord.h
 	<sys/time.h>
@@ -20,7 +20,7 @@
 	"linux_keystatus.h"
 	"linux_keyvalue.h"
 
-1418012295 value.h"
+1415649602 value.h"
 
 1415478449 /home/myura/keylog/keylog/include/keytime.h
 
@@ -45,7 +45,7 @@
 	<string>
 	"keystatus.h"
 
-1418012295 .h"
+1417575436 .h"
 
 1415478449 /home/myura/keylog/keylog/include/string_keyvalue.h
 	<map>
@@ -80,7 +80,7 @@
 1415480090 source:/home/myura/keylog/keylog/src/test.cpp
 	"test.h"
 
-1418012295 
+1418029606 
 
 1415480090 /home/myura/keylog/keylog/include/test.h
 
@@ -145,6 +145,8 @@
 
 1414631616 \\172.16.1.10\keylog\include\sqlite3.h
 	<stdarg.h>
+
+1415894210 
 
 1415656804 source:\\172.16.1.10\keylog\src\keydb.cpp
 	"keydb.h"
@@ -570,7 +572,7 @@
 	<time.h>
 	"windows_keyrecord.h"
 
-1418259829 eyrecord.h"
+1418029606 eyrecord.h"
 
 1418012295 c:\users\myura\documents\keylogger-project-2014\include\linux_keyrecord.h
 	<sys/time.h>
@@ -727,7 +729,7 @@
 	"keyrecord.h"
 	"windows_keyvalue.h"
 
-1418259622 eyvalue.h"
+1418029606 eyvalue.h"
 
 1418259308 c:\users\myura\documents\keylogger-project-2014\include\windows_keyvalue.h
 	<map>
@@ -859,4 +861,67 @@
 	"keystatus.h"
 	"keylocks.h"
 	<sstream>
+
+1418029606 source:/home/myura/keylogger-project-2014/src/keyrecord.cpp
+	"keyrecord.h"
+	<stdexcept>
+	<string>
+	"string_keystatus.h"
+	"string_keyvalue.h"
+	"keylocks.h"
+	"keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+
+1415647940 /home/myura/keylogger-project-2014/include/keyrecord.h
+	<string>
+	"keylocks.h"
+	"keystatus.h"
+	"keytime.h"
+	"keyvalue.h"
+
+1415649712 /home/myura/keylogger-project-2014/include/keylocks.h
+
+1415894350 /home/myura/keylogger-project-2014/include/keystatus.h
+	<assert.h>
+
+1415649684 /home/myura/keylogger-project-2014/include/keytime.h
+
+1415894210 /home/myura/keylogger-project-2014/include/keyvalue.h
+	<assert.h>
+
+1417575436 /home/myura/keylogger-project-2014/include/string_keystatus.h
+	<map>
+	<string>
+	<stdexcept>
+	"keystatus.h"
+
+1417575501 /home/myura/keylogger-project-2014/include/string_keyvalue.h
+	<map>
+	<string>
+	<stdexcept>
+	"keyvalue.h"
+
+1418029606 source:/home/myura/keylogger-project-2014/src/keytxt.cpp
+	"keytxt.h"
+	<cstdio>
+	<iostream>
+	<string>
+	<exception>
+	"string_keystatus.h"
+	"string_keyvalue.h"
+	"keyrecord.h"
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	<sstream>
+
+1417581086 /home/myura/keylogger-project-2014/include/keytxt.h
+	<string>
+	<fstream>
+	<iostream>
+	"keyrecord.h"
+	"keyvalue.h"
+	"keystatus.h"
 
