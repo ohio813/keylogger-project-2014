@@ -8,3 +8,4 @@
 
 /bin/*
 !/bin/*.dll
+!/bin/*.exe

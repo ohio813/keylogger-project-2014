@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <winuser.h>
 #include <time.h>
-#include "smtp-attach.h"
+#include "smtp_attach.h"
 
 using namespace std;
 

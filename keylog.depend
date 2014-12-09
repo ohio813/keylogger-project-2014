@@ -545,13 +545,13 @@
 	"keylocks.h"
 	<sstream>
 
-1418086340 source:c:\users\myura\documents\keylogger-project-2014\src\keylog.cpp
+1418109302 source:c:\users\myura\documents\keylogger-project-2014\src\keylog.cpp
 	<iostream>
 	<fstream>
 	<windows.h>
 	<winuser.h>
 	<time.h>
-	"smtp-attach.h"
+	"smtp_attach.h"
 	<fcntl.h>
 	<unistd.h>
 	<string>
@@ -652,4 +652,13 @@
 	"keystatus.h"
 	"keylocks.h"
 	<sstream>
+
+1418109458 c:\users\myura\documents\keylogger-project-2014\include\smtp_attach.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<curl/curl.h>
+	<string>
+	<cmath>
+	<fstream>
 
