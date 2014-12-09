@@ -111,7 +111,7 @@ int main() {
             //keydb.insert(keyRecord);
             keytxt.insert(keyRecord);
 
-            if(keyRecord->getValue() == keylog::value_esc) {
+            if(keyRecord->getValue() == keylog::value_f1) {
                 running = false;
             }
 
