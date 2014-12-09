@@ -140,7 +140,7 @@ int main_smtp(void)
 	curl_easy_setopt(curl, CURLOPT_READFUNCTION, fileBuf_source);
     curl_easy_setopt(curl, CURLOPT_READDATA, &file_upload_ctx);
     curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
-    curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+    //curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
     curl_easy_setopt(curl, CURLOPT_FORBID_REUSE, 1L);
 
     res = curl_easy_perform(curl);

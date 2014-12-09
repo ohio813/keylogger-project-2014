@@ -38,7 +38,7 @@ namespace keylog_txt {
         if (debug) {
             std::cout << insert_string << std::endl;
         }
-        fprintf(txt, "%s\n", insert_string.c_str());
+        fprintf(txt, "%s\r\n", insert_string.c_str());
     }
 
     std::string KeyTXT::keytime(keylog::KeyTime time) {

