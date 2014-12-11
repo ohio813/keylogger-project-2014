@@ -5,11 +5,11 @@
 		<Option title="keylog" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="include/;" />
+		<Option virtualFolders="include\;" />
 		<Build>
 			<Target title="release_windows">
 				<Option platforms="Windows;" />
-				<Option output="bin/keylog" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/keylog_windows" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -22,7 +22,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-static" />
-					<Add library="C:/MinGW/msys/1.0/local/lib/libcurl.dll.a" />
+					<Add library="C:\MinGW\msys\1.0\local\lib\libcurl.dll.a" />
 					<Add directory="C:/MinGW/msys/1.0/local/include" />
 				</Linker>
 			</Target>
