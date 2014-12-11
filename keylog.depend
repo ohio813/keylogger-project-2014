@@ -545,21 +545,22 @@
 	"keylocks.h"
 	<sstream>
 
-1418109302 source:c:\users\myura\documents\keylogger-project-2014\src\keylog.cpp
-	<iostream>
-	<fstream>
-	<windows.h>
-	<winuser.h>
-	<time.h>
-	"smtp_attach.h"
-	<fcntl.h>
-	<unistd.h>
+1418259829 source:c:\users\myura\documents\keylogger-project-2014\src\keylog.cpp
 	<string>
-	"linux_keyrecord.h"
+	"smtp_attach.h"
 	"keytxt.h"
 	"keyrecord.h"
 	"keyvalue.h"
-	"smtp-attach.h"
+	<fcntl.h>
+	<unistd.h>
+	"linux_keyrecord.h"
+	<iostream>
+	<fstream>
+	<cstdio>
+	<windows.h>
+	<winuser.h>
+	<time.h>
+	"windows_keyrecord.h"
 
 1418012295 c:\users\myura\documents\keylogger-project-2014\include\linux_keyrecord.h
 	<sys/time.h>
@@ -615,7 +616,7 @@
 	<cmath>
 	<fstream>
 
-1418012295 source:c:\users\myura\documents\keylogger-project-2014\src\keyrecord.cpp
+1418251281 source:c:\users\myura\documents\keylogger-project-2014\src\keyrecord.cpp
 	"keyrecord.h"
 	<stdexcept>
 	<string>
@@ -638,7 +639,7 @@
 	<stdexcept>
 	"keyvalue.h"
 
-1418111110 source:c:\users\myura\documents\keylogger-project-2014\src\keytxt.cpp
+1418113957 source:c:\users\myura\documents\keylogger-project-2014\src\keytxt.cpp
 	"keytxt.h"
 	<cstdio>
 	<iostream>
@@ -653,7 +654,7 @@
 	"keylocks.h"
 	<sstream>
 
-1418109458 c:\users\myura\documents\keylogger-project-2014\include\smtp_attach.h
+1418257840 c:\users\myura\documents\keylogger-project-2014\include\smtp_attach.h
 	<stdio.h>
 	<string.h>
 	<iostream>
@@ -661,4 +662,60 @@
 	<string>
 	<cmath>
 	<fstream>
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\curl.h
+	"curlver.h"
+	"curlbuild.h"
+	"curlrules.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"typecheck-gcc.h"
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\curlver.h
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\curlbuild.h
+	<windows.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<stdint.h>
+	<inttypes.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\curlrules.h
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\easy.h
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\multi.h
+	"curl.h"
+
+1418084516 c:\mingw\msys\1.0\local\include\curl\typecheck-gcc.h
+
+1418259622 c:\users\myura\documents\keylogger-project-2014\include\windows_keyrecord.h
+	<time.h>
+	<stdexcept>
+	"keytime.h"
+	"keyvalue.h"
+	"keystatus.h"
+	"keylocks.h"
+	"keyrecord.h"
+	"windows_keyvalue.h"
+
+1418259308 c:\users\myura\documents\keylogger-project-2014\include\windows_keyvalue.h
+	<map>
+	<windows.h>
+	<winuser.h>
+	"keyvalue.h"
 
